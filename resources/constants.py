@@ -6,6 +6,9 @@ PURGE_MESSAGES_COMMAND_HELP = f'remove all messages sent by user in current chan
 HELP_COMMAND = 'help'
 HELP_COMMAND_HELP = f'ex. of usage: $${HELP_COMMAND}'
 
+WEATHER_COMMAND = 'weather'
+WEATHER_COMMAND_HELP = f'ex. of usage: $${WEATHER_COMMAND} city'
+
 HELP_MANUAL_TITLE = 'Help manual for PuddingBot'
 HELP_MANUAL_FOOTER = 'Thank you'
 

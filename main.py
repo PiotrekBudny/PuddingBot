@@ -5,6 +5,7 @@ from discord.ext import commands
 import logging
 from cmds.purge import Purge
 from cmds.help import Help
+from cmds.weather import Weather
 from errorHandler import ErrorHandler
 
 from resources import constants
@@ -27,6 +28,10 @@ async def admin_permission_not_fullfilled(ctx, error): await ErrorHandler.comman
 #Help command initialization
 @bot.command(name=constants.HELP_COMMAND, help = constants.HELP_COMMAND_HELP)
 async def help_command(ctx): await Help(ctx,bot).execute_command()
+
+#Weather command initialization
+@bot.command(name=constants.WEATHER_COMMAND, help = constants.WEATHER_COMMAND_HELP)
+async def weather_command(ctx, *, city: str): await Weather(ctx,city).execute_command()
 
 @bot.event
 async def on_ready() -> None:
