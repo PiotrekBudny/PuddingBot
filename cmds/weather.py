@@ -10,7 +10,7 @@ class Weather:
         self.city=city
         self.ctx=ctx
     
-    def normalize_polish_city_name(self, city: str) -> str:
+    def _normalize_polish_city_name(self, city: str) -> str:
         normalized_text = unicodedata.normalize('NFD', city)
         
         polish_to_non_polish = {
@@ -27,14 +27,13 @@ class Weather:
         
     async def execute_command(self):
         data: dict
-        city = self.normalize_polish_city_name(self.city)
+        city = self._normalize_polish_city_name(self.city)
         
         try:
             data = ImgwApi.GetWeatherFromPolishCity(city)
         except:
             await self.ctx.send(f'Unable to fetch weather.')
-            logging.warn(f'Unable to get weather')
-            raise Exception(f'Unable to get weather.')
+            logging.warning(f'Unable to get weather')
         
         weatherImg = WeatherImage()
         
