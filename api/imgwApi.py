@@ -10,17 +10,4 @@ class ImgwApi():
             raise Exception("Station not found.")
         
         data = response.json()
-        return data       
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        return data
