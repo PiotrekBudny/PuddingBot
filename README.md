@@ -14,4 +14,8 @@ remove all messages sent by user in current channel. Executable by Admins only.
 
 ex. of usage: $$purge_messages_from @user
 
+'weather'
 
+get current weather for some of polish cities 
+
+ex. of usage: $$weather city
