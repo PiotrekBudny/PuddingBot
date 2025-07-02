@@ -6,6 +6,7 @@ import logging
 from cmds.purge import Purge
 from cmds.help import Help
 from cmds.weather import Weather
+from cmds.weatherLowestTemp import weatherLowestTemp
 from errorHandler import ErrorHandler
 
 from resources import constants
@@ -32,6 +33,10 @@ async def help_command(ctx): await Help(ctx,bot).execute_command()
 #Weather command initialization
 @bot.command(name=constants.WEATHER_COMMAND, help = constants.WEATHER_COMMAND_HELP)
 async def weather_command(ctx, *, city: str): await Weather(ctx,city).execute_command()
+
+#Weather_lowest_temperature initialization
+@bot.command(name=constants.WEATHER_LOWEST_TEMP_COMMAND, help = constants.WEATHER_LOWEST_TEMP_COMMAND_HELP)
+async def weather_lowest_temperature(ctx): await weatherLowestTemp(ctx).execute_command()
 
 @bot.event
 async def on_ready() -> None:
