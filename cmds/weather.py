@@ -30,10 +30,11 @@ class Weather:
         city = self._normalize_polish_city_name(self.city)
         
         try:
-            data = ImgwApi.GetWeatherFromPolishCity(city)
-        except:
+            imgw = ImgwApi()
+            data = imgw.get_weather_for_polish_city(city)
+        except Exception as error:
             await self.ctx.send(f'Unable to fetch weather.')
-            logging.warning(f'Unable to get weather')
+            logging.warning(f'Unable to get weather {error}')
         
         weatherImg = WeatherImage()
         
