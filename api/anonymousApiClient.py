@@ -1,7 +1,7 @@
 import requests
 
-class AnonymousApiClient():
+class AnonymousApiClient:
     
-    def get(url: str):
+    def get(self, url: str):
         raw_response = requests.get(url)
         return raw_response
