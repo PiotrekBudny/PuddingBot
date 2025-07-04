@@ -1,4 +1,4 @@
-class JokeResponse:
+class JokeTwoPartResponse:
     def __init__(self, error, category, type, setup, delivery, flags, id, safe, lang):
         self.error = error
         self.category = category

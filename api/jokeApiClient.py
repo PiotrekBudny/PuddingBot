@@ -1,5 +1,6 @@
 from api.anonymousApiClient import AnonymousApiClient
-from api.models.joke_response import JokeResponse
+from api.models.joke_two_part_response import JokeTwoPartResponse
+from api.models.joke_single_part_response import JokeSinglePartResponse
 
 class JokeApiClient:
     
@@ -11,8 +12,13 @@ class JokeApiClient:
         response = AnonymousApiClient().get(url)
         if response.status_code == 200:
             json = response.json()
-            joke_response = JokeResponse(**json)
-            return joke_response
+            try:
+                return JokeTwoPartResponse(**json)
+            except (TypeError, KeyError) as e:
+                try:
+                    return JokeSinglePartResponse(**json)
+                except Exception as finalException:
+                    raise finalException    
         else:
             raise Exception("No joke returned")
         
