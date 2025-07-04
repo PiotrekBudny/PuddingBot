@@ -12,6 +12,9 @@ WEATHER_COMMAND_HELP = f'get current weather for some of polish cities. ex. of u
 WEATHER_LOWEST_TEMP_COMMAND = 'weather_lowest_temp'
 WEATHER_LOWEST_TEMP_COMMAND_HELP = f'get current weather where currently lowest temperature for some of polish cities. ex. of usage: $${WEATHER_LOWEST_TEMP_COMMAND} city'
 
+JOKE_COMMAND = 'joke'
+JOKE_COMMAND_HELP = f'Get funny programming joke ex. of usage: $${JOKE_COMMAND}'
+
 HELP_MANUAL_TITLE = 'Help manual for PuddingBot'
 HELP_MANUAL_FOOTER = 'Thank you'
 
