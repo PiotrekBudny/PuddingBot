@@ -43,7 +43,7 @@ python main.py
 | `$$purge_messages_from @user`   | Remove all messages sent by a user in the current channel (Admins only).                     | `$$purge_messages_from @username`    |
 | `$$weather <city>`              | Get current weather for a specified Polish city.                                             | `$$weather Warszawa`                 |
 | `$$weather_lowest_temp`         | Show weather for the city with the lowest current temperature in Poland.                     | `$$weather_lowest_temp`              |
-
+| `$$joke`                        | Get very funny programmers joke.                                                             | `$$joke`                             |
 ## Notes
 
 - The bot uses the [IMGW public API](https://danepubliczne.imgw.pl/api/data/synop) for weather data.
